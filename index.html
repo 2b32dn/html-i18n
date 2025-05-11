@@ -2,13 +2,58 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>i18n-test</title>
+  <link rel="stylesheet" href="./css/styles.css" />
 </head>
 
 <body>
+  <div class="wrapper">
+    <header>
+      <nav>
+        <ul>
+          <li><a href="./home.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="./about.html" data-i18n="nav.about">About</a></li>
+          <li><a href="./contact.html" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+        <div class="language-selector">
+          <select id="language-select">
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+          </select>
+        </div>
+      </nav>
+    </header>
 
+    <main>
+      <section id="home">
+        <h1 data-i18n="home.title">Welcome to our website!</h1>
+        <p data-i18n="home.description">This is a simple internationalization test.</p>
+      </section>
+      <section id="about">
+        <h2 data-i18n="about.title">About Us</h2>
+        <p data-i18n="about.description">We are a company that values diversity and inclusion.</p>
+      </section>
+      <section id="contact">
+        <h2 data-i18n="contact.title">Contact Us</h2>
+        <p data-i18n="contact.description">Feel free to reach out to us anytime!</p>
+      </section>
+    </main>
+
+    <footer>
+      <p data-i18n="footer.text">© 2023 i18n-test. All rights reserved.</p>
+      <p><span data-i18n="footer.language">Language:</span> <span id="current-language">English</span></p>
+    </footer>
+  </div>
+
+  <!-- Include script AFTER DOM -->
+  <script src="./i18n.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      initI18n();
+    });
+  </script>
 </body>
 
 </html>

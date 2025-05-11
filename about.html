@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="nav.about">About</title>
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <div data-include="./components/header.html"></div>
+
+    <main>
+      <section>
+        <h2 data-i18n="about.title">About Us</h2>
+        <p data-i18n="about.description">We are a team of passionate developers dedicated to building accessible,
+          multilingual websites.</p>
+      </section>
+    </main>
+
+    <div data-include="./components/footer.html"></div>
+  </div>
+
+  <script src="./js/includes.js"></script>
+  <script src="./js/i18n.js"></script>
+  <script>
+    includeHTML().then(() => {
+      initI18n();
+    });
+  </script>
+</body>
+
+</html>
