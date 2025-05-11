@@ -10,21 +10,7 @@
 
 <body>
   <div class="wrapper">
-    <header>
-      <nav>
-        <ul>
-          <li><a href="./home.html" data-i18n="nav.home">Home</a></li>
-          <li><a href="./about.html" data-i18n="nav.about">About</a></li>
-          <li><a href="./contact.html" data-i18n="nav.contact">Contact</a></li>
-        </ul>
-        <div class="language-selector">
-          <select id="language-select">
-            <option value="en">English</option>
-            <option value="fr">Français</option>
-          </select>
-        </div>
-      </nav>
-    </header>
+    <div data-include="./components/header.html"></div>
 
     <main>
       <section id="home">
@@ -41,16 +27,13 @@
       </section>
     </main>
 
-    <footer>
-      <p data-i18n="footer.text">© 2023 i18n-test. All rights reserved.</p>
-      <p><span data-i18n="footer.language">Language:</span> <span id="current-language">English</span></p>
-    </footer>
+    <div data-include="./components/footer.html"></div>
   </div>
 
-  <!-- Include script AFTER DOM -->
-  <script src="./i18n.js"></script>
+  <script src="./js/includes.js"></script>
+  <script src="./js/i18n.js"></script>
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
+    includeHTML().then(() => {
       initI18n();
     });
   </script>
