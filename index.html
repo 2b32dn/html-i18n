@@ -25,6 +25,10 @@
         <h2 data-i18n="contact.title">Contact Us</h2>
         <p data-i18n="contact.description">Feel free to reach out to us anytime!</p>
       </section>
+      <section>
+        <h2>test</h2>
+        <ul id="menu-list"></ul>
+      </section>
     </main>
 
     <div data-include="./components/footer.html"></div>
@@ -32,9 +36,16 @@
 
   <script src="./js/includes.js"></script>
   <script src="./js/i18n.js"></script>
+  <script src="./js/menu.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      loadMenu();
+    });
+  </script>
   <script>
     includeHTML().then(() => {
       initI18n();
+      loadMenu();
     });
   </script>
 </body>
